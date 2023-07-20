@@ -2,16 +2,15 @@ const Product = require('../models/Product')
 
 exports.read = async (req,res)=>{
     try {
-        //code
         const id = req.params.id        
-        const producted = await Product.findOne({_id: id}).exec();
+        const producted = await Product.findOne({_id: id}).exec()
         res.send(producted)
     } catch (error) {
         //error
         console.log(error)
         res.status(500).send("Sever error")
     }
-    res.send("hello constrollers Read")
+   // res.send("hello constrollers Read")
 }
 
 exports.list = async (req,res)=>{
@@ -54,7 +53,7 @@ exports.remove = async (req,res)=>{
         //code
         const id = req.params.id
         const removed = await Product.findOneAndDelete({_id: id}).exec()
-        res.send(removed)
+        //res.send(removed)
     } catch (error) {
         //error
         console.log(error)
